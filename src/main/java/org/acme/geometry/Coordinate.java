@@ -17,7 +17,7 @@ public class Coordinate {
 
 	
 	public boolean isEmpty() {
-        return Double.isNaN(x) && Double.isNaN(y);
+        return Double.isNaN(x) || Double.isNaN(y);
     }
 
     public double getX() {
