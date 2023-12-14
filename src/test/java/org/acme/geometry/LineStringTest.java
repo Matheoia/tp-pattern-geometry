@@ -13,13 +13,25 @@ public class LineStringTest {
 	
 	public static final double EPSILON = 1.0e-15;
 	
-//	@Test
-//    public void testDefaultConstructor() {
-//		LineString points = new LineString();
-//        //Assert.assertTrue(point.isEmpty());
-//
-//	}
-//	
+	@Test
+    	public void testDefaultConstructor() {
+		LineString points = new LineString();
+		Assert.assertEquals(0, points.getNumPoints());
+		Assert.assertEquals("LineString", points.getType());
+        	//Assert.assertTrue(points.isEmpty());
+	}
+
+	
+	@Test
+    	public void testConstructor() {
+		Point point = new Point(new Coordinate(3.0, 4.0));
+		List<Point> points = new ArrayList<Point>();
+		points.add(point);
+		LineString lineString = new LineString(points);
+		Assert.assertEquals(1, lineString.getNumPoints());
+        	//Assert.assertFalse(points.isEmpty());
+	}
+	
 	
 	@Test
 	public void testGetNumPoints() {
